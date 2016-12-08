@@ -12,20 +12,8 @@ namespace TravelAgency.DataAccess
     {
         public static List<City> GetProvinceCities(int provinceId)
         {
-            List<City> retVal = new List<City>();
-            using (SqlConnection con = ConnectionManager.GetConnection())
-            {
-                string sql = string.Format("SELECT * FROM City WHERE ProvinceId={0}", provinceId);
-                using (SqlCommand cmd = new SqlCommand(sql, con))
-                {
-                    using (SqlDataReader rdr = cmd.ExecuteReader())
-                    {
-                        while (rdr.Read())
-                            retVal.Add(new City(rdr));
-                    }
-                }
-                return retVal;
-            }
+            string sql = string.Format("SELECT * FROM City WHERE ProvinceId={0}", provinceId);
+            return DBRetriever.Retrieve<City>(sql);
         }
     }
 }

@@ -12,20 +12,8 @@ namespace TravelAgency.DataAccess
     {
         public static List<Province> GetAll()
         {
-            List<Province> retVal = new List<Province>();
-            using (SqlConnection con = ConnectionManager.GetConnection())
-            {
-                string sql = "SELECT * FROM Province";
-                using (SqlCommand cmd = new SqlCommand(sql, con))
-                {
-                    using (SqlDataReader rdr = cmd.ExecuteReader())
-                    {
-                        while (rdr.Read())
-                            retVal.Add(new Province(rdr));
-                    }
-                    return retVal;
-                }
-            }
+            string sql = "SELECT * FROM Province";
+            return DBRetriever.Retrieve<Province>(sql);
         }
     }
 }
