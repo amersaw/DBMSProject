@@ -314,7 +314,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TravelAgency.Model\TravelAgency.Model.csproj">
+    <ProjectReference Include="..\TravelAgency.Model\TravelAgency.Model.csproj">
       <Project>{b6309704-2a4e-44a5-9f7c-fdc202876818}</Project>
       <Name>TravelAgency.Model</Name>
     </ProjectReference>

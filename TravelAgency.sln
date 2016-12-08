@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency", "TravelAgency\TravelAgency.csproj", "{5B9DB8E6-E87E-41E2-8D5E-2706DF566C3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Model", "..\TravelAgency.Model\TravelAgency.Model.csproj", "{B6309704-2A4E-44A5-9F7C-FDC202876818}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Model", "TravelAgency.Model\TravelAgency.Model.csproj", "{B6309704-2A4E-44A5-9F7C-FDC202876818}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.DataAccess", "TravelAgency.DataAccess\TravelAgency.DataAccess.csproj", "{CCFC8A1F-86AA-4423-8074-7F8C540228CB}"
 EndProject
