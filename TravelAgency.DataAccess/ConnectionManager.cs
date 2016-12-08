@@ -11,16 +11,17 @@ namespace TravelAgency.DataAccess
     public class ConnectionManager
     {
 
-        private static SqlConnection _con = null;
-
+        private static string _connectionString;
+        static ConnectionManager()
+        {
+            _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        }
         public static SqlConnection GetConnection()
         {
-            if (_con == null)
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-                _con = new SqlConnection(connectionString);
-            }
+            var _con = new SqlConnection(_connectionString);
+            _con.Open();
             return _con;
+
         }
     }
 }

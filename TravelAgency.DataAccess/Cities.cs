@@ -8,23 +8,23 @@ using TravelAgency.Model;
 
 namespace TravelAgency.DataAccess
 {
-    public static class Provinces
+    public class Cities
     {
-        public static List<Province> GetAll()
+        public static List<City> GetProvinceCities(int provinceId)
         {
-            List<Province> retVal = new List<Province>();
+            List<City> retVal = new List<City>();
             using (SqlConnection con = ConnectionManager.GetConnection())
             {
-                string sql = "SELECT * FROM Province";
+                string sql = string.Format("SELECT * FROM City WHERE ProvinceId={0}", provinceId);
                 using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
-                            retVal.Add(new Province(rdr));
+                            retVal.Add(new City(rdr));
                     }
-                    return retVal;
                 }
+                return retVal;
             }
         }
     }
