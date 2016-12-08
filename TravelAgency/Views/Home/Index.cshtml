@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+    List<TravelAgency.Model.Province> lst = TravelAgency.DataAccess.Provinces.GetAll();
+}
+@foreach(var p in lst)
+{
+   <p>@p.Name</p>
+}
