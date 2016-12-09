@@ -1,0 +1,18 @@
+﻿
+@foreach (var province in Globals.AllProvinces)
+{
+    <li>
+        <a href="@Url.Action("Show","Province",new { id=province.Id})"><i class="fa fa-star fa-fw"></i> @province.Name <span class="fa arrow"></span></a>
+        @if(province.Cities!=null && province.Cities.Count > 0)
+        {
+            <ul class="nav nav-second-level">
+                @foreach (var city in province.Cities)
+                {
+                    <li>
+                        <a   href="@Url.Action("Show","City",new { id=city.Id})"> <i class="fa  fa-play"></i> &nbsp; @city.Name</a>
+                    </li>
+                }
+            </ul>
+        }
+    </li>
+}

@@ -13,7 +13,7 @@ namespace TravelAgency.DataAccess
         public static List<Province> GetAll()
         {
             string sql = "SELECT * FROM Province";
-            return DBRetriever.Retrieve<Province>(sql);
+            return DBRetriever.RetrieveList<Province>(sql);
         }
     }
 }

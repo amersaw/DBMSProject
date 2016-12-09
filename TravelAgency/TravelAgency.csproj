@@ -120,10 +120,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +301,9 @@
     <Content Include="vendor\font-awesome\scss\_spinning.scss" />
     <Content Include="vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Views\Shared\_CitiesSideBar.cshtml" />
+    <Content Include="Views\Province\Show.cshtml" />
+    <Content Include="Views\City\Show.cshtml" />
     <None Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>

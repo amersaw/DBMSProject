@@ -13,7 +13,7 @@ namespace TravelAgency.Model
         public string Name { get; set; }
         public string Latitude { get; set; }
         public string Longtude { get; set; }
-        public double Population { get; set; }
+        public string Population { get; set; }
         public int ProvinceId { get; set; }
 
         public City(SqlDataReader rdr)
@@ -22,7 +22,7 @@ namespace TravelAgency.Model
             this.Name = (string)rdr["Name"];
             this.Latitude = (string)rdr["Latitude"];
             this.Longtude = (string)rdr["Longtude"];
-            this.Population = (double)rdr["Population"];
+            this.Population = (string)rdr["Population"];
             this.ProvinceId = (int)rdr["ProvinceId"];
         }
     }
