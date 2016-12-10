@@ -1,6 +1,6 @@
 ﻿@model TravelAgency.Model.City
 @{
-    ViewBag.Title = string.Format("{0}",Model.Name );
+    ViewBag.Title = string.Format("{0}", Model.Name);
 }
 @if (Model == null)
 {
@@ -74,72 +74,40 @@ else
         <div class="col-lg-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                    Hotels
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-comment fa-fw"></i> New Comment
+                    @foreach (var item in Model.Hotels)
+                    {
+                        <a href="@Url.Action("Show","Hotel",new {id=item.Id })" class="list-group-item">
+                            <i class="fa fa-info fa-fw"></i> @item.Name
                             <span class="pull-right text-muted small">
-                                <em>4 minutes ago</em>
+                                <em>@item.ServiceQuality Stars</em>
                             </span>
                         </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                            <span class="pull-right text-muted small">
-                                <em>12 minutes ago</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-envelope fa-fw"></i> Message Sent
-                            <span class="pull-right text-muted small">
-                                <em>27 minutes ago</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-tasks fa-fw"></i> New Task
-                            <span class="pull-right text-muted small">
-                                <em>43 minutes ago</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                            <span class="pull-right text-muted small">
-                                <em>11:32 AM</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-                            <span class="pull-right text-muted small">
-                                <em>11:13 AM</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-warning fa-fw"></i> Server Not Responding
-                            <span class="pull-right text-muted small">
-                                <em>10:57 AM</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-                            <span class="pull-right text-muted small">
-                                <em>9:49 AM</em>
-                            </span>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-money fa-fw"></i> Payment Received
-                            <span class="pull-right text-muted small">
-                                <em>Yesterday</em>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- /.list-group -->
-                    <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                    }
                 </div>
-                <!-- /.panel-body -->
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Restaurants
+                </div>
+                <div class="panel-body">
+                    @foreach (var item in Model.Restaurants)
+                    {
+                        <a href="@Url.Action("Show","Restaurant",new {id=item.Id })" class="list-group-item">
+                            <i class="fa fa-info fa-fw"></i> @item.Name
+                            <span class="pull-right text-muted small">
+                                <em>@item.Specialties</em>
+                            </span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+
     </div>
 }
 

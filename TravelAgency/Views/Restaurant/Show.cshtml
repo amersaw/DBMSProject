@@ -1,0 +1,37 @@
+﻿@model TravelAgency.Model.Restaurant
+
+@{
+    ViewBag.Title = Model.Name;
+        
+}
+<div class="row">
+    <div class="col-mg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Restaurant Adress
+            </div>
+            <div class="panel-body">
+                <h4>
+                    @Model.Address
+                </h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-mg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Specialties
+            </div>
+            <div class="panel-body">
+                <h4>
+                    @Model.Specialties
+                </h4>
+            </div>
+        </div>
+    </div>
+
+</div>
