@@ -1,15 +1,14 @@
 ﻿@model TravelAgency.Model.Province
 @{
-    ViewBag.Title = "Show Province";
+    ViewBag.Title = string.Format("Show Province ({0})",Model.Name);
 }
 
-@if(Model == null)
+@if (Model == null)
 {
     <p>Not Found</p>
 }
 else
 {
-
     <div class="row">
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
@@ -19,7 +18,7 @@ else
                             <i class="fa fa-users fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">@Model.Population</div>
+                            <div class="huge">@Model.CalculatedPopulation</div>
                             <div>Population</div>
                         </div>
                     </div>
@@ -34,7 +33,7 @@ else
                             <i class="glyphicon glyphicon-flag fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">XX</div>
+                            <div class="huge">@Model.Cities.Count</div>
                             <div>Cities</div>
                         </div>
                     </div>
@@ -49,7 +48,7 @@ else
                             <i class="glyphicon glyphicon-phone-alt fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">0286</div>
+                            <div class="huge">@Model.TelCode</div>
                             <div>Phone Code</div>
                         </div>
                     </div>
@@ -64,7 +63,7 @@ else
                             <i class="glyphicon glyphicon-map-marker fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">Ege</div>
+                            <div class="huge">@Model.Region</div>
                             <div>Region</div>
                         </div>
                     </div>
@@ -72,5 +71,36 @@ else
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Cities Population
+                </div>
+                <div class="panel-body">
+                    <div id="morris-donut-chart"></div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script>
+            Morris.Donut({
+                element: 'morris-donut-chart',
+                data: [
+                    @foreach(var city in Model.Cities)
+                    {
+                       @( Html.Raw(string.Format("{{ label: \'{0}\', value: {1}, click: '{2}'}},", city.Name, city.Population,Url.Action("Show","City",new { id=city.Id }))));
+                    }
+                ],
+                resize: true
+            }).on('click', function (i, row) {
+                console.log(i, row);
+                document.location = $(row).attr("click");
+            });;
+        </script>
+    }
 }
 

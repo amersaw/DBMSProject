@@ -1,3 +1,24 @@
-﻿@{
+﻿@model List<TravelAgency.Model.Province>
+@{
     ViewBag.Title = "Home Page";
 }
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Registered Provinces
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    @foreach (var prov in Model)
+                    {
+                        <a href="@Url.Action("Show","Province",new {id=prov.Id })" class="list-group-item">@prov.Name</a>
+                    }
+                </div>
+            </div>
+            <div class="panel-footer">
+                Total Provinces : @Model.Count
+            </div>
+        </div>
+    </div>    
+</div>
