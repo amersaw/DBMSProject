@@ -16,6 +16,11 @@ namespace TravelAgency.Model
         public int Population { get; set; }
         public int ProvinceId { get; set; }
 
+
+        public List<Restaurant> Restaurants { get; set; }
+        public List<Hotel> Hotels { get; set; }
+        public List<TouristicSite> TouristicSites { get; set; }
+
         public City(SqlDataReader rdr)
         {
             this.Id = (int)rdr["Id"];

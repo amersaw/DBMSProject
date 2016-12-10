@@ -13,6 +13,10 @@ namespace TravelAgency.Controllers
         public ActionResult Show(int id)
         {
             City city = DataAccess.Cities.GetCity(id);
+            city.Hotels = DataAccess.Hotels.GetCityHotels(id);
+            city.TouristicSites= DataAccess.TouristicSites.GetCityTouristicSites(id);
+            city.Restaurants= DataAccess.Restaurants.GetCityRestaurants(id);
+
             return View(city);
         }
     }

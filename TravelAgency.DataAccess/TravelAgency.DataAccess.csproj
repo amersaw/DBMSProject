@@ -44,8 +44,11 @@
     <Compile Include="Cities.cs" />
     <Compile Include="ConnectionManager.cs" />
     <Compile Include="DBRetriever.cs" />
+    <Compile Include="Hotels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provinces.cs" />
+    <Compile Include="Restaurants.cs" />
+    <Compile Include="TouristicSites.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelAgency.Model\TravelAgency.Model.csproj">
