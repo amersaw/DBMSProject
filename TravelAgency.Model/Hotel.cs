@@ -7,23 +7,25 @@ using System.Threading.Tasks;
 
 namespace TravelAgency.Model
 {
-    public class City
+    public class Hotel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Latitude { get; set; }
-        public string Longtude { get; set; }
-        public int Population { get; set; }
-        public int ProvinceId { get; set; }
-
-        public City(SqlDataReader rdr)
+        public string Longitude { get; set; }
+        public string ServiceQuality { get; set; }
+        public string Tel { get; set; }
+        public int CityId { get; set; }
+        public Hotel(SqlDataReader rdr)
         {
             this.Id = (int)rdr["Id"];
             this.Name = (string)rdr["Name"];
             this.Latitude = (string)rdr["Latitude"];
-            this.Longtude = (string)rdr["Longtude"];
-            this.Population = (int)rdr["Population"];
-            this.ProvinceId = (int)rdr["ProvinceId"];
+            this.Longitude = (string)rdr["Longitude"];
+            this.ServiceQuality = (string)rdr["ServiceQuality"];
+            this.Tel = (string)rdr["Tel"];
+            this.CityId = (int)rdr["CityId"];
         }
     }
+
 }

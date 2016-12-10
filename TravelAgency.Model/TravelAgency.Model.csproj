@@ -41,9 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="City.cs" />
+    <Compile Include="Hotel.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Province.cs" />
+    <Compile Include="PublicTransportation.cs" />
+    <Compile Include="PublicTransportationType.cs" />
+    <Compile Include="Restaurant.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="TouristicSite.cs" />
+    <Compile Include="TravelAgency.cs" />
+    <Compile Include="TravelAgencyBranch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
