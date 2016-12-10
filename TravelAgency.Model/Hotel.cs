@@ -16,6 +16,10 @@ namespace TravelAgency.Model
         public string ServiceQuality { get; set; }
         public string Tel { get; set; }
         public int CityId { get; set; }
+
+        public string CityName { get; set; }
+        public string ProvinceName { get; set; }
+
         public Hotel(SqlDataReader rdr)
         {
             this.Id = (int)rdr["Id"];

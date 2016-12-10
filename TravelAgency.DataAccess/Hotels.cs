@@ -14,5 +14,11 @@ namespace TravelAgency.DataAccess
             string sql = string.Format("SELECT * FROM Hotels WHERE CityId={0}", cityId);
             return DBRetriever.RetrieveList<Hotel>(sql);
         }
+
+        public static Hotel GetById(int id)
+        {
+            string sql = string.Format("SELECT * FROM Hotels WHERE Id={0}", id);
+            return DBRetriever.Retrieve<Hotel>(sql);
+        }
     }
 }

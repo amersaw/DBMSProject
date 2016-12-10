@@ -1,0 +1,59 @@
+﻿@model TravelAgency.Model.Hotel
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <p>Information</p>
+        <div class="list-group">
+
+            <a href="#" class="list-group-item">
+                <i class="fa  fa-phone-square   fa-fw"></i> Phone Number
+                <span class="pull-right text-muted small">
+                    <em>@Model.Tel</em>
+                </span>
+            </a>
+            <a href="#" class="list-group-item">
+                <i class="fa fa-comment fa-fw"></i> City
+                <span class="pull-right text-muted small">
+                    <em>@Model.CityName</em>
+                </span>
+            </a>
+            <a href="#" class="list-group-item">
+                <i class="fa fa-comment fa-fw"></i> Province
+                <span class="pull-right text-muted small">
+                    <em>@Model.ProvinceName</em>
+                </span>
+            </a>
+            <a href="#" class="list-group-item">
+                <i class="fa fa-star   fa-fw"></i>Service Quality
+                <span class="pull-right text-muted small">
+                    <em>@Model.ServiceQuality</em>
+                </span>
+            </a>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div style="height:200px;">
+            <div id="map">
+
+            </div>
+        </div>
+        @section scripts{
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrzu7GuhAnOodLklDe5JT9lmtVoeo30yA&callback=initMap" async defer></script>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: @Model.Latitude, lng: @Model.Longitude },
+                    zoom: 8
+                });
+            }
+        </script>
+        }
+
+    </div>
+</div>
