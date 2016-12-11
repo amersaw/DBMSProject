@@ -13,6 +13,9 @@ namespace TravelAgency.Model
         public string Name { get; set; }
         public string HeadquartersAddress { get; set; }
         public string TelNo { get; set; }
+
+        public List<TravelAgencyBranch> Branches { get; set; }
+
         public TravelAgency(SqlDataReader rdr)
         {
             this.Id = (int)rdr["Id"];
@@ -21,5 +24,5 @@ namespace TravelAgency.Model
             this.TelNo = (string)rdr["TelNo"];
         }
     }
-    
+
 }

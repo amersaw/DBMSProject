@@ -125,6 +125,9 @@
     <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
+    <Compile Include="Controllers\TouristicSiteController.cs" />
+    <Compile Include="Controllers\TravelAgencyBranchController.cs" />
+    <Compile Include="Controllers\TravelAgencyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -310,6 +313,9 @@
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Hotel\Show.cshtml" />
     <Content Include="Views\Restaurant\Show.cshtml" />
+    <Content Include="Views\TouristicSite\Show.cshtml" />
+    <Content Include="Views\TravelAgency\Show.cshtml" />
+    <Content Include="Views\TravelAgencyBranch\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

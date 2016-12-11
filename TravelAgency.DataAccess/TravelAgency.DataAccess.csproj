@@ -49,6 +49,8 @@
     <Compile Include="Provinces.cs" />
     <Compile Include="Restaurants.cs" />
     <Compile Include="TouristicSites.cs" />
+    <Compile Include="TravelAgencies.cs" />
+    <Compile Include="TravelAgencyBranches.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TravelAgency.Model\TravelAgency.Model.csproj">

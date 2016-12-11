@@ -15,6 +15,10 @@ namespace TravelAgency.Model
         public string TelNo { get; set; }
         public int CityId { get; set; }
         public int TravelAgencyId { get; set; }
+
+        public string CityName { get; set; }
+        public string AgencyName { get; set; }
+
         public TravelAgencyBranch(SqlDataReader rdr)
         {
             this.Id = (int)rdr["Id"];

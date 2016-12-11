@@ -20,5 +20,24 @@
                 Total Provinces : @Model.Count
             </div>
         </div>
-    </div>    
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Registered Travel Agencies
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+                    @foreach (var ag in ViewBag.TravelAgencies)
+                    {
+                        <a href="@Url.Action("Show","TravelAgency",new {id=ag.Id })" class="list-group-item">@ag.Name</a>
+                    }
+                </div>
+            </div>
+            <div class="panel-footer">
+                Total Travel Agencies  : @ViewBag.TravelAgencies.Count
+            </div>
+        </div>
+    </div>
+
 </div>

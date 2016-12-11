@@ -20,6 +20,7 @@ namespace TravelAgency.Model
         public List<Restaurant> Restaurants { get; set; }
         public List<Hotel> Hotels { get; set; }
         public List<TouristicSite> TouristicSites { get; set; }
+        public List<TravelAgencyBranch> TravelAgencyBranches { get; set; }
 
         public City(SqlDataReader rdr)
         {

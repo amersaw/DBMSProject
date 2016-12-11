@@ -16,6 +16,7 @@ namespace TravelAgency.Controllers
             city.Hotels = DataAccess.Hotels.GetCityHotels(id);
             city.TouristicSites= DataAccess.TouristicSites.GetCityTouristicSites(id);
             city.Restaurants= DataAccess.Restaurants.GetCityRestaurants(id);
+            city.TravelAgencyBranches = DataAccess.TravelAgencyBranches.GetCityBranches(id);
 
             return View(city);
         }

@@ -10,6 +10,7 @@ namespace TravelAgency.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.TravelAgencies = DataAccess.TravelAgencies.GetAll();
             return View(TravelAgency.DataAccess.Provinces.GetAll());
         }
     }

@@ -77,15 +77,18 @@ else
                     Hotels
                 </div>
                 <div class="panel-body">
-                    @foreach (var item in Model.Hotels)
-                    {
-                        <a href="@Url.Action("Show","Hotel",new {id=item.Id })" class="list-group-item">
-                            <i class="fa fa-info fa-fw"></i> @item.Name
-                            <span class="pull-right text-muted small">
-                                <em>@item.ServiceQuality Stars</em>
-                            </span>
-                        </a>
-                    }
+
+                    <div class="list-group">
+                        @foreach (var item in Model.Hotels)
+                        {
+                            <a href="@Url.Action("Show","Hotel",new {id=item.Id })" class="list-group-item">
+                                <i class="fa fa-info fa-fw"></i> @item.Name
+                                <span class="pull-right text-muted small">
+                                    <em>@item.ServiceQuality Stars</em>
+                                </span>
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,7 +110,44 @@ else
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Touristic Sites
+                </div>
+                <div class="panel-body">
+                    @foreach (var item in Model.TouristicSites)
+                    {
+                        <a href="@Url.Action("Show","TouristicSite",new {id=item.Id })" class="list-group-item">
+                            <i class="fa fa-info fa-fw"></i> @item.Address
+                            <span class="pull-right text-muted small">
+                                @*<em>@item.Specialties</em>*@
+                            </span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Travel Agency Branches
+                </div>
+                <div class="panel-body">
+                    @foreach (var item in Model.TravelAgencyBranches)
+                    {
+                        <a href="@Url.Action("Show","TravelAgencyBranch",new {id=item.Id })" class="list-group-item">
+                            <i class="fa fa-info fa-fw"></i> @item.Name
+                            <span class="pull-right text-muted small">
+                                @*<em>@item.Specialties</em>*@
+                            </span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 }
 

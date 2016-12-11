@@ -1,0 +1,43 @@
+﻿@model TravelAgency.Model.TravelAgency
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">Headquarters Address</div>
+            <div class="panel-body">
+                <h3> @Model.HeadquartersAddress</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">Phone Numbr</div>
+            <div class="panel-body">
+                <h3>@Model.TelNo</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Branches</div>
+            <div class="panel-body">
+                <div class="list-group">
+                    @foreach (var item in Model.Branches)
+                    {
+                        <a href="@Url.Action("Show","TravelAgencyBranch",new {id=item.Id })" class="list-group-item">
+                            <i class="fa fa-info fa-fw"></i> @item.Name
+                            <span class="pull-right text-muted small">
+                                <em>@item.CityName</em>
+                            </span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
