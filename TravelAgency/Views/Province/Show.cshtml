@@ -1,6 +1,6 @@
 ﻿@model TravelAgency.Model.Province
 @{
-    ViewBag.Title = string.Format("Show Province ({0})",Model.Name);
+    ViewBag.Title = string.Format("Province : {0}", Model.Name);
 }
 
 @if (Model == null)
@@ -63,7 +63,7 @@ else
                             <i class="glyphicon glyphicon-map-marker fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">@Model.Region</div>
+                            <div class="large" style="margin-bottom:35px;">@Model.Region</div>
                             <div>Region</div>
                         </div>
                     </div>
@@ -80,6 +80,35 @@ else
                 </div>
                 <div class="panel-body">
                     <div id="morris-donut-chart"></div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+        <div class="col-lg-6">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> List of Cities 
+                </div>
+                <div class="panel-body">
+                    <table class="table table-no-border m-0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Population</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            @foreach (var city in Model.Cities)
+                            {
+                                <tr>
+                                    <td>@city.Name</td>
+                                    <td>@city.Population</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
                 <!-- /.panel-body -->
             </div>

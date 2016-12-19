@@ -102,9 +102,9 @@ else
                     {
                         <a href="@Url.Action("Show","Restaurant",new {id=item.Id })" class="list-group-item">
                             <i class="fa fa-info fa-fw"></i> @item.Name
-                            <span class="pull-right text-muted small">
+                            @*<span class="pull-right text-muted small">
                                 <em>@item.Specialties</em>
-                            </span>
+                            </span>*@
                         </a>
                     }
                 </div>
@@ -121,7 +121,7 @@ else
                     @foreach (var item in Model.TouristicSites)
                     {
                         <a href="@Url.Action("Show","TouristicSite",new {id=item.Id })" class="list-group-item">
-                            <i class="fa fa-info fa-fw"></i> @item.Address
+                            <i class="fa fa-info fa-fw"></i> @item.Type
                             <span class="pull-right text-muted small">
                                 @*<em>@item.Specialties</em>*@
                             </span>
@@ -141,7 +141,7 @@ else
                         <a href="@Url.Action("Show","TravelAgencyBranch",new {id=item.Id })" class="list-group-item">
                             <i class="fa fa-info fa-fw"></i> @item.Name
                             <span class="pull-right text-muted small">
-                                @*<em>@item.Specialties</em>*@
+                                <em>@item.AgencyName</em>
                             </span>
                         </a>
                     }
@@ -149,6 +149,37 @@ else
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Map
+                </div>
+                <div class="panel-body">
+
+                    <div style="height:200px;">
+                        <div id="map">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrzu7GuhAnOodLklDe5JT9lmtVoeo30yA&callback=initMap" async defer></script>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+
+                    center: { lat: @Globals.CleanString( Model.Latitude), lng: @Globals.CleanString( Model.Longtude) },
+                    zoom: 10
+                });
+            }
+        </script>
+
+    }
 }
 
 

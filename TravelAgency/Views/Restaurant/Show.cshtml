@@ -27,9 +27,12 @@
                 Specialties
             </div>
             <div class="panel-body">
-                <h4>
-                    @Model.Specialties
-                </h4>
+                <ul>
+                    @foreach (var sp in Model.Specialties.Split('\\'))
+                    {
+                        <li>@sp</li>
+                    }
+                </ul>
             </div>
         </div>
     </div>

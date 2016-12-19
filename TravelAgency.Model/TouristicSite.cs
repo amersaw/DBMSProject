@@ -14,11 +14,13 @@ namespace TravelAgency.Model
         public string Type { get; set; }
         public string Address { get; set; }
         public int CityId { get; set; }
+        public string Name { get; set; }
         public TouristicSite(SqlDataReader rdr)
         {
             this.Id = (int)rdr["Id"];
             this.OpeningHours = (string)rdr["OpeningHours"];
             this.Type = (string)rdr["Type"];
+            this.Name = (string)rdr["Name"];
             this.Address = (string)rdr["Address"];
             this.CityId = (int)rdr["CityId"];
         }

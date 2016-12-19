@@ -44,16 +44,64 @@
             </div>
         </div>
         @section scripts{
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrzu7GuhAnOodLklDe5JT9lmtVoeo30yA&callback=initMap" async defer></script>
-        <script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrzu7GuhAnOodLklDe5JT9lmtVoeo30yA&callback=initMap" async defer></script>
+            <script>
             var map;
             function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
-                    center: { lat: @Model.Latitude, lng: @Model.Longitude },
+                    
+                center: { lat: @Globals.CleanString( Model.Latitude), lng: @Globals.CleanString( Model.Longitude) },
                     zoom: 8
                 });
             }
-        </script>
+                @*var geocoder;
+                var map;
+
+                function initialize() {
+
+                    geocoder = new google.maps.Geocoder();
+
+                    var latlng = new google.maps.LatLng(@Globals.CleanString( Model.Latitude), @Globals.CleanString(Model.Longitude ));
+                    var mapOptions = {
+                        zoom: 8,
+                        center: latlng
+                    };
+
+                    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                    // Call the codeAddress function (once) when the map is idle (ready)
+                    google.maps.event.addListenerOnce(map, 'idle', codeAddress);
+                }
+
+                function codeAddress() {
+
+                    // Define address to center map to
+                    var address = '@Model.Latitude, @Model.Longitude';
+
+                    geocoder.geocode({
+                        'address': address
+                    }, function (results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+
+                            // Center map on location
+                            map.setCenter(results[0].geometry.location);
+
+                            // Add marker on location
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: results[0].geometry.location
+                            });
+
+                        } else {
+
+                            alert("Geocode was not successful for the following reason: " + status);
+                        }
+                    });
+                }
+
+                initialize();*@
+            </script>
         }
 
     </div>

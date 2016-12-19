@@ -17,7 +17,10 @@ namespace TravelAgency.Controllers
             city.TouristicSites= DataAccess.TouristicSites.GetCityTouristicSites(id);
             city.Restaurants= DataAccess.Restaurants.GetCityRestaurants(id);
             city.TravelAgencyBranches = DataAccess.TravelAgencyBranches.GetCityBranches(id);
-
+            foreach (var tabranch in city.TravelAgencyBranches)
+            {
+                tabranch.AgencyName = DataAccess.TravelAgencies.GetById(tabranch.TravelAgencyId).Name;
+            }
             return View(city);
         }
     }

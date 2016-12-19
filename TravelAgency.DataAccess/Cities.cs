@@ -12,7 +12,7 @@ namespace TravelAgency.DataAccess
     {
         public static List<City> GetProvinceCities(int provinceId)
         {
-            string sql = string.Format("SELECT * FROM City WHERE ProvinceId={0}", provinceId);
+            string sql = string.Format("SELECT * FROM City WHERE ProvinceId={0} ORDER BY Population DESC", provinceId);
             return DBRetriever.RetrieveList<City>(sql);
         }
 
